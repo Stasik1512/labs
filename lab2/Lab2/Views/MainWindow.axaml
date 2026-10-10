@@ -11,8 +11,14 @@
 
 <!--/////////////////////////////////////////////////////////// -->
     <DockPanel>
-        <StackPanel>
-            <Menu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Menu Grid.Row="0" DockPanel.Dock="Top">
                 <MenuItem Header="Файл">
                     <MenuItem Header="Открыть" />
                     <MenuItem Header="Создать новый файл"/>
@@ -38,7 +44,8 @@
                     <MenuItem Header="Проверить обновления"/>
                 </MenuItem>
             </Menu>
-            <Border DockPanel.Dock="Top">
+            
+            <Border Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Новый"></Button>
                     <Button Content="Сохранить"></Button>
@@ -46,7 +53,8 @@
                     <Button Content="Настройки"></Button>
                 </StackPanel>
             </Border>
-            <Grid>
+
+            <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
                     <ColumnDefinition Width="5"/>
@@ -55,7 +63,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" DockPanel.Dock="Left" Background="LightGray" Height="550">
+                <StackPanel Grid.Column="0" DockPanel.Dock="Left" Background="LightGray">
                     <TextBlock FontSize="18" >Проводник</TextBlock>
                     <Button Content="Проекты"></Button>
                     <Button Content="Документы"></Button>
@@ -75,7 +83,8 @@
                     <TextBlock FontSize="15" Foreground="Gray">Здесь будет содержимое выбранного файла</TextBlock>
                 </StackPanel>
             </Grid>
-            <Grid  VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Height="30" Background="#F0F0F0" ColumnDefinitions="*, Auto, Auto">
+
+            <Grid Grid.Row="3" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Height="30" Background="#F0F0F0" ColumnDefinitions="*, Auto, Auto">
                 <!-- Левая часть: основной статус -->
                 <TextBlock Grid.Column="0" Text="Готово" VerticalAlignment="Center" Margin="10,0"/>
                 
@@ -85,6 +94,6 @@
                 <!-- Правая часть: индикатор или прогресс -->
                 <ProgressBar Grid.Column="2" Value="50" Width="100" Height="14" Margin="10,0" VerticalAlignment="Center"/>
             </Grid>
-        </StackPanel>
+        </Grid>
     </DockPanel>
 </Window>
