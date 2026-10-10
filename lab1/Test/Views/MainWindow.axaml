@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Test.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Test.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Lab 1 - Avalonia">
+    <!--////////////////////////////////////////////////////////////////////-->
+    <DockPanel LastChildFill = "True">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="5">
+            <Button Margin= "2" Content="Новый"/>
+            <Button Margin= "2" Content="Открыть"/>
+            <Button Margin= "2" Content="Сохранить"/>
+        </StackPanel>
+
+        <Border DockPanel.Dock="Bottom" Padding="8">
+            <Button Content="Готово"></Button>
+        </Border>
+            <Grid ShowGridLines="True">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5"> </ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            
+        
+                <StackPanel Grid.Column="0" Spacing="8" Margin="10">
+                    <TextBlock Text="Файлы" FontSize="20"/>
+
+                    <Button Content="Документ 1"/>
+                    <Button Content="Документ 2"/>
+                    <Button Content="Документ 3"/>
+                </StackPanel>
+
+                <GridSplitter Background="#ECFFE6" Grid.Column="1" Width="5" HorizontalAlignment="Stretch"/>
+
+
+                <Border Grid.Column="2" Margin="10" Padding="10">
+                    <TextBox AcceptsReturn="True" PlaceholderText="Введите текст..."/>
+                </Border>
+            </Grid>
+    </DockPanel>
+</Window>
+ 

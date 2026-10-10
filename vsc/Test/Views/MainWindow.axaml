@@ -1,0 +1,186 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Test.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="Test.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Моё приложение">
+
+    <DockPanel LastChildFill="True">
+
+        <StackPanel DockPanel.Dock="Top">
+
+            <!-- Главное меню -->
+            <Menu>
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Новый"/>
+                    <MenuItem Header="Открыть"/>
+                    <MenuItem Header="Сохранить"/>
+                    <Separator/> <!-- полоса -->
+                    <MenuItem Header="Выход"/>
+                </MenuItem>
+                <MenuItem Header="Правка">
+                    <MenuItem Header="Отменить"/>
+                    <MenuItem Header="Повторить"/>
+                </MenuItem>
+                <MenuItem Header="Вид">
+                    <MenuItem Header="Панели"/>
+                </MenuItem>
+                <MenuItem Header="Справка">
+                    <MenuItem Header="О программе"/>
+                </MenuItem>
+            </Menu>
+        </StackPanel>
+
+
+        <Border DockPanel.Dock="Bottom"
+                Background="#FFFCE3"
+                BorderBrush="#3C3C3C"
+                BorderThickness="1"
+                Padding="8"
+                Margin="4">
+
+            <Button Content="Готово"/>
+        </Border>
+
+        <Border DockPanel.Dock="Left"
+                MinWidth="150"
+                MaxWidth="300"
+                Margin="4"
+                Padding="10"
+                Background="#FFFCE3"
+                BorderBrush="#3C3C3C"
+                BorderThickness="1"
+                CornerRadius="8"
+    >
+
+            <StackPanel Spacing="8">
+
+                <TextBlock Text="Разделы" FontSize="18"/>
+
+                <Button Content="Главная"/>
+                <Button Content="Документы"/>
+                <Button Content="Изображения"/>
+                <Button Content="Настройки"/>
+            </StackPanel>
+
+        </Border>
+
+
+        <!-- ===================================================== -->
+        <!-- 4. ЦЕНТРАЛЬНАЯ РАБОЧАЯ ОБЛАСТЬ -->
+        <!-- ===================================================== -->
+
+        <Grid Margin="4">
+
+            <!-- Три колонки:
+                 0 — левая область
+                 1 — разделитель
+                 2 — правая область
+            -->
+
+            <Grid.ColumnDefinitions>
+
+                <ColumnDefinition Width="*"/>
+
+                <ColumnDefinition Width="5"/>
+
+                <ColumnDefinition Width="2*"/>
+
+            </Grid.ColumnDefinitions>
+
+
+            <Border Grid.Column="0"
+                    Margin="4"
+                    Padding="10"
+                    Background="#FFFCE3"
+                    BorderBrush="#3C3C3C"
+                    BorderThickness="1"
+                    CornerRadius="8">
+
+                <StackPanel Spacing="10">
+
+                    <TextBlock Text="Рабочая область" FontSize="20"/>
+                    <TextBlock Text="Выберите действие:"/>
+
+                    <ComboBox PlaceholderText="Выберите вариант">
+
+                        <ComboBoxItem Content="Вариант 1"/>
+                        <ComboBoxItem Content="Вариант 2"/>
+                        <ComboBoxItem Content="Вариант 3"/>
+                    </ComboBox>
+
+                    <CheckBox Content="Запомнить выбор"/>
+                    <ToggleSwitch Content="Тёмная тема" IsChecked="True"/>
+
+                </StackPanel>
+            </Border>
+
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+            <Border Grid.Column="2"
+                    Margin="4"
+                    Padding="10"
+                    Background="#FFFCE3"
+                    BorderBrush="#3C3C3C"
+                    BorderThickness="1"
+                    CornerRadius="8">
+
+                <TabControl>
+
+                    <!-- ВКЛАДКА 1 -->
+                    <TabItem Header="Общие">
+
+                        <StackPanel Margin="10" Spacing="10">
+                            <TextBlock Text="Общие настройки" FontSize="20"/>
+
+                            <TextBlock Text="Выберите пол:"/>
+
+                            <RadioButton Content="Мужской" GroupName="Gender"/>
+                            <RadioButton Content="Женский" GroupName="Gender"/>
+                            <RadioButton Content="Другое"  GroupName="Gender"/>
+                        </StackPanel>
+                    </TabItem>
+
+
+                    <!-- ВКЛАДКА 2 -->
+                    <TabItem Header="Внешний вид">
+                        <UniformGrid
+                            Rows="2"
+                            Columns="3"
+                            Margin="10">
+                            <Button Content="Кнопка 1"/>
+                            <Button Content="Кнопка 2"/>
+                            <Button Content="Кнопка 3"/>
+                            <Button Content="Кнопка 4"/>
+                            <Button Content="Кнопка 5"/>
+                            <Button Content="Кнопка 6"/>
+                        </UniformGrid>
+                    </TabItem>
+    
+
+                    <!-- ВКЛАДКА 3 -->
+                    <TabItem Header="Редактор">
+                        <Grid Margin="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="Редактор" FontSize="20"/>
+                            <TextBox Grid.Row="1" AcceptsReturn="True" PlaceholderText="Введите текст..." Margin="0,10"/>
+                            <Button Grid.Row="2"  Content="Сохранить" d:HorizontalAlignment="Right"/>
+                        </Grid>
+                    </TabItem>
+
+                </TabControl>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>
