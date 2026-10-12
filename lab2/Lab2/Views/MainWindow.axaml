@@ -53,7 +53,6 @@
                     <Button Content="Настройки"></Button>
                 </StackPanel>
             </Border>
-
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200"/>
@@ -62,38 +61,34 @@
                     <ColumnDefinition Width="5"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-
-                <StackPanel Grid.Column="0" DockPanel.Dock="Left" Background="LightGray">
-                    <TextBlock FontSize="18" >Проводник</TextBlock>
-                    <Button Content="Проекты"></Button>
-                    <Button Content="Документы"></Button>
-                    <Button Content="Изображения"></Button>
+                
+                <StackPanel Grid.Column="0" DockPanel.Dock="Left" Background="{DynamicResource ExplorerBg}">
+                    <TextBlock Margin="5,5,0,5" FontSize="18" >Проводник</TextBlock>
+                    <Button HorizontalAlignment="Stretch" Background="Transparent" Content="Проекты"></Button>
+                    <Button HorizontalAlignment="Stretch" Background="Transparent" Content="Документы"></Button>
+                    <Button HorizontalAlignment="Stretch" Background="Transparent" Content="Изображения"></Button>
                 </StackPanel>
-                    <GridSplitter Grid.Column="1" Width="5" Background="Gray" HorizontalAlignment="Stretch"/>
-                    <StackPanel Grid.Column="2" Background="White">
-                    <TextBlock FontSize="18">Файлы</TextBlock>
-                    <Button Content="file1.txt"></Button>
-                    <Button Content="image.png"></Button>
-                    <Button Content="document.pdf"></Button>
+                    <GridSplitter Grid.Column="1" Width="2" Background="LightGray" HorizontalAlignment="Stretch"/>
+                    <StackPanel Grid.Column="2">
+                    <TextBlock Margin="5,5,0,5" FontSize="18">Файлы</TextBlock>
+                    <Button Margin="5,0,5,0" HorizontalAlignment="Stretch" Content="file1.txt"></Button>
+                    <Button Margin="5,0,5,0" HorizontalAlignment="Stretch" Content="image.png"></Button>
+                    <Button Margin="5,0,5,0" HorizontalAlignment="Stretch" Content="document.pdf"></Button>
                 </StackPanel>
-                <GridSplitter Grid.Column="3" Width="5" Background="Gray" HorizontalAlignment="Stretch"/>
+                <GridSplitter Grid.Column="3" Width="2" Background="LightGray" HorizontalAlignment="Stretch"/>
 
-                <StackPanel Grid.Column="4" Background="White">
+                <StackPanel Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock FontSize="18">Область просмотра / Редактор</TextBlock>
                     <TextBlock FontSize="15" Foreground="Gray">Здесь будет содержимое выбранного файла</TextBlock>
                 </StackPanel>
             </Grid>
 
-            <Grid Grid.Row="3" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Height="30" Background="#F0F0F0" ColumnDefinitions="*, Auto, Auto">
+            <Grid Grid.Row="3" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Height="35" Background="#E5E5E5" ColumnDefinitions="*, Auto, Auto">
                 <!-- Левая часть: основной статус -->
-                <TextBlock Grid.Column="0" Text="Готово" VerticalAlignment="Center" Margin="10,0"/>
-                
-                <!-- Средняя часть: дополнительная информация (например, позиция курсора) -->
+                <Button Content="Готово" Grid.Column="0" VerticalAlignment="Center" Margin="4" Click="CloseButton_Click" />
                 <TextBlock Grid.Column="1" Text="Стр 1, Кол 1" VerticalAlignment="Center" Margin="10,0"/>
-                
-                <!-- Правая часть: индикатор или прогресс -->
-                <ProgressBar Grid.Column="2" Value="50" Width="100" Height="14" Margin="10,0" VerticalAlignment="Center"/>
+                <ProgressBar Grid.Column="2" Value="50" Width="100" Height="14" Margin="10" VerticalAlignment="Center"/>
             </Grid>
-        </Grid>
+        </Grid> 
     </DockPanel>
 </Window>
