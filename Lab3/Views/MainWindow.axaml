@@ -1,0 +1,44 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Lab3.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Lab3.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Lab3">
+
+<!-- ////////////////////////////////////////////////////////////////// -->  
+ <Grid RowDefinitions="Auto, *, Auto" ColumnDefinitions="*" Margin="12">
+        <TextBlock Grid.Row="0" Text="Настроки приложения" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="1" RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="150,220,*" RowSpacing="12" ColumnSpacing="12">
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Общие" FontFamily="Bold" FontSize="16" Margin="0,0,0,8"/>
+                
+                
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Язык интерфейса" VerticalAlignment="Center" />
+                <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="0">
+                        <ComboBoxItem Content="Русский"/>
+                        <ComboBoxItem Content="English"/>
+                        <ComboBoxItem Content="Español"/>
+                </ComboBox>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Тема оформления" VerticalAlignment="Center"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" SelectedIndex="0">
+                        <ComboBoxItem Content="Светлая"/>
+                        <ComboBoxItem Content="Тёмная"/>
+                        <ComboBoxItem Content="Системная"/>
+                </ComboBox>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Автосохрание" VerticalAlignment="Center"/>
+                <CheckBox Grid.Row="3" Grid.Column="1" Content="Включить" VerticalAlignment="Center"/>
+               <GridSplitter Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Height="5" HorizontalAlignment="Stretch" Margin="8" Background="LightGray"/>
+                <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Дополнительные настройки" FontFamily="Bold" FontSize="16" VerticalAlignment="Stretch"/>
+        </Grid>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" >
+                <Button Content="Отмена" Width="90" HorizontalAlignment="Center" />
+                <Button Content="Применить" Width="100" HorizontalAlignment="Center"/>
+                <Button Content="ОК" Width="70" Background="#0088FF" Foreground="White" HorizontalAlignment="Center"/>
+        </StackPanel>
+ </Grid>
+</Window>
+

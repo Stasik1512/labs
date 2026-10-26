@@ -1,0 +1,132 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Lab4.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Lab4.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Lab4">
+
+ <Grid RowDefinitions="Auto,*"
+          Margin="15"
+          RowSpacing="15">
+
+        <TextBlock Grid.Row="0"
+                   Text="Галерея"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+
+        <ScrollViewer Grid.Row="1"
+                      HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto">
+
+            <WrapPanel HorizontalAlignment="Center">
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="15"
+                        Margin="5"
+                        MinWidth="140"
+                        MaxWidth="200">
+                    <StackPanel Spacing="10">
+                        <Image Source="avares://Lab4/Assets/flowers.jpeg"
+                                Height="120"
+                                Stretch="UniformToFill"/>
+                        <TextBlock Text="Цветы"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="15"
+                        Margin="5"
+                        MinWidth="140"
+                        MaxWidth="200">
+                    <StackPanel Spacing="10">
+                        <Image Source="avares://Lab4/Assets/sea.jpeg"
+                                    Height="120"
+                                    Stretch="UniformToFill"/>
+                        <TextBlock Text="Море"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="15"
+                        Margin="5"
+                        MinWidth="140"
+                        MaxWidth="200">
+                    <StackPanel Spacing="10">
+                        <Image Source="avares://Lab4/Assets/cat.jpeg"
+                                    Height="120"
+                                    Stretch="UniformToFill"/>
+                        <TextBlock Text="Кошка"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="15"
+                        Margin="5"
+                        MinWidth="140"
+                        MaxWidth="200">
+                    <StackPanel Spacing="10">
+                        <Image Source="avares://Lab4/Assets/nature.jpeg"
+                                    Height="120"
+                                    Stretch="UniformToFill"/>
+                        <TextBlock Text="Природа"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="15"
+                        Margin="5"
+                        MinWidth="140"
+                        MaxWidth="200">
+                    <StackPanel Spacing="10">
+                        <Image Source="avares://Lab4/Assets/space.jpeg"
+                                    Height="120"
+                                    Stretch="UniformToFill"/>
+                        <TextBlock Text="Космос"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <Border BorderBrush="Gray"
+                        BorderThickness="1"
+                        CornerRadius="10"
+                        Padding="15"
+                        Margin="5"
+                        MinWidth="140"
+                        MaxWidth="200">
+                    <StackPanel Spacing="10">
+                        <Image Source="avares://Lab4/Assets/city.jpeg"
+                                    Height="120"
+                                    Stretch="UniformToFill"/>
+                        <TextBlock Text="Город"
+                                   FontSize="16"
+                                   HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
